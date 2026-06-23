@@ -81,41 +81,49 @@ int main(){
             
             /////
             if (layar[0][0] != ' ' && layar[0][0] == layar[0][1] && layar[0][1] == layar[0][2]) {
+                tampilkanLayar();
                 menang(layar[0][0]);
                 adaPemenang = true;
                 break;
             }
             else if (layar[1][0] != ' ' && layar[1][0] == layar[1][1] && layar[1][1] == layar[1][2]) {
+                tampilkanLayar();
                 menang(layar[1][0]);
                 adaPemenang = true;
                 break;
             }
             else if (layar[2][0] != ' ' && layar[2][0] == layar[2][1] && layar[2][1] == layar[2][2]) {
+                tampilkanLayar();
                 menang(layar[2][0]);
                 adaPemenang = true;
                 break;
             }
             else if (layar[0][0] != ' ' && layar[0][0] == layar[1][0] && layar[1][0] == layar[2][0]) {
+                tampilkanLayar();
                 menang(layar[0][0]);
                 adaPemenang = true;
                 break;
             }
             else if (layar[0][1] != ' ' && layar[0][1] == layar[1][1] && layar[1][1] == layar[2][1]) {
+                tampilkanLayar();
                 menang(layar[0][1]);
                 adaPemenang = true;
                 break;
             }
             else if (layar[0][2] != ' ' && layar[0][2] == layar[1][2] && layar[1][2] == layar[2][2]) {
+                tampilkanLayar();
                 menang(layar[0][2]);
                 adaPemenang = true;
                 break;
             }
             else if (layar[0][0] != ' ' && layar[0][0] == layar[1][1] && layar[1][1] == layar[2][2]) {
+                tampilkanLayar();
                 menang(layar[0][0]);
                 adaPemenang = true;
                 break;
             }
             else if (layar[0][2] != ' ' && layar[0][2] == layar[1][1] && layar[1][1] == layar[2][0]) {
+                tampilkanLayar();
                 menang(layar[0][2]);
                 adaPemenang = true;
                 break;
@@ -129,8 +137,11 @@ int main(){
             }
         }
 
-        tampilkanLayar();
-        if (!adaPemenang) cout << "Permainan berakhir seri (Draw)!\n";
+        
+        if (!adaPemenang) {
+            tampilkanLayar();
+            cout << "Permainan berakhir seri (Draw)!\n";
+        }
         
         cout << "Ingin bermain lagi? (y/n) : ";
         char lagi; cin >> lagi;
