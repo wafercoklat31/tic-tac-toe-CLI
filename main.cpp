@@ -76,73 +76,73 @@ int main(){
     while (!isClose){
         clear(layar);
         bool adaPemenang = false;
+        
         for (int i = 1; i <= 9; i++){
             tampilkanLayar();
             
-            /////
-            if (layar[0][0] != ' ' && layar[0][0] == layar[0][1] && layar[0][1] == layar[0][2]) {
-                tampilkanLayar();
-                menang(layar[0][0]);
-                adaPemenang = true;
-                break;
-            }
-            else if (layar[1][0] != ' ' && layar[1][0] == layar[1][1] && layar[1][1] == layar[1][2]) {
-                tampilkanLayar();
-                menang(layar[1][0]);
-                adaPemenang = true;
-                break;
-            }
-            else if (layar[2][0] != ' ' && layar[2][0] == layar[2][1] && layar[2][1] == layar[2][2]) {
-                tampilkanLayar();
-                menang(layar[2][0]);
-                adaPemenang = true;
-                break;
-            }
-            else if (layar[0][0] != ' ' && layar[0][0] == layar[1][0] && layar[1][0] == layar[2][0]) {
-                tampilkanLayar();
-                menang(layar[0][0]);
-                adaPemenang = true;
-                break;
-            }
-            else if (layar[0][1] != ' ' && layar[0][1] == layar[1][1] && layar[1][1] == layar[2][1]) {
-                tampilkanLayar();
-                menang(layar[0][1]);
-                adaPemenang = true;
-                break;
-            }
-            else if (layar[0][2] != ' ' && layar[0][2] == layar[1][2] && layar[1][2] == layar[2][2]) {
-                tampilkanLayar();
-                menang(layar[0][2]);
-                adaPemenang = true;
-                break;
-            }
-            else if (layar[0][0] != ' ' && layar[0][0] == layar[1][1] && layar[1][1] == layar[2][2]) {
-                tampilkanLayar();
-                menang(layar[0][0]);
-                adaPemenang = true;
-                break;
-            }
-            else if (layar[0][2] != ' ' && layar[0][2] == layar[1][1] && layar[1][1] == layar[2][0]) {
-                tampilkanLayar();
-                menang(layar[0][2]);
-                adaPemenang = true;
-                break;
-            }
-            /////
-
+            // Gerakkan pemain dulu
             if (i % 2 != 0){
                 gerakPemain('X');
             } else {
                 gerakPemain('O');
             }
+            
+            // === CEK MENANG SETELAH BERGERAK ===
+            
+            
+            if (layar[0][0] != ' ' && layar[0][0] == layar[0][1] && layar[0][1] == layar[0][2]) {
+                tampilkanLayar();
+                menang(layar[0][0]);
+                adaPemenang = true;
+            }
+            else if (layar[1][0] != ' ' && layar[1][0] == layar[1][1] && layar[1][1] == layar[1][2]) {
+                tampilkanLayar();
+                menang(layar[1][0]);
+                adaPemenang = true;
+            }
+            else if (layar[2][0] != ' ' && layar[2][0] == layar[2][1] && layar[2][1] == layar[2][2]) {
+                tampilkanLayar();
+                menang(layar[2][0]);
+                adaPemenang = true;
+            }
+            else if (layar[0][0] != ' ' && layar[0][0] == layar[1][0] && layar[1][0] == layar[2][0]) {
+                tampilkanLayar();
+                menang(layar[0][0]);
+                adaPemenang = true;
+            }
+            else if (layar[0][1] != ' ' && layar[0][1] == layar[1][1] && layar[1][1] == layar[2][1]) {
+                tampilkanLayar();
+                menang(layar[0][1]);
+                adaPemenang = true;
+            }
+            else if (layar[0][2] != ' ' && layar[0][2] == layar[1][2] && layar[1][2] == layar[2][2]) {
+                tampilkanLayar();
+                menang(layar[0][2]);
+                adaPemenang = true;
+            }
+            else if (layar[0][0] != ' ' && layar[0][0] == layar[1][1] && layar[1][1] == layar[2][2]) {
+                tampilkanLayar();
+                menang(layar[0][0]);
+                adaPemenang = true;
+            }
+            else if (layar[0][2] != ' ' && layar[0][2] == layar[1][1] && layar[1][1] == layar[2][0]) {
+                tampilkanLayar();
+                menang(layar[0][2]);
+                adaPemenang = true;
+            }
+            
+            if (adaPemenang) {
+                break;           // keluar dari for loop kalau sudah ada pemenang
+            }
         }
-
         
+        // Setelah for loop
         if (!adaPemenang) {
             tampilkanLayar();
             cout << "Permainan berakhir seri (Draw)!\n";
         }
         
+        // Tanya main lagi...
         cout << "Ingin bermain lagi? (y/n) : ";
         char lagi; cin >> lagi;
         while (lagi != 'y' && lagi != 'Y' && lagi != 'n' && lagi != 'N'){
