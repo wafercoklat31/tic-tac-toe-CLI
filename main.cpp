@@ -31,8 +31,8 @@ void gerakPemain(char pemain){
                     
         if (!(cin >> x >> y)) {
             cout << "Input harus berupa angka!\n";
-            cin.clear();                    // hapus error state
-            cin.ignore(10000, '\n');        // buang sisa input yang salah
+            cin.clear();
+            cin.ignore(10000, '\n');
             continue;
         }
 
@@ -80,15 +80,11 @@ int main(){
         for (int i = 1; i <= 9; i++){
             tampilkanLayar();
             
-            // Gerakkan pemain dulu
             if (i % 2 != 0){
                 gerakPemain('X');
             } else {
                 gerakPemain('O');
             }
-            
-            // === CEK MENANG SETELAH BERGERAK ===
-            
             
             if (layar[0][0] != ' ' && layar[0][0] == layar[0][1] && layar[0][1] == layar[0][2]) {
                 tampilkanLayar();
@@ -132,17 +128,15 @@ int main(){
             }
             
             if (adaPemenang) {
-                break;           // keluar dari for loop kalau sudah ada pemenang
+                break;
             }
         }
         
-        // Setelah for loop
         if (!adaPemenang) {
             tampilkanLayar();
             cout << "Permainan berakhir seri (Draw)!\n";
         }
         
-        // Tanya main lagi...
         cout << "Ingin bermain lagi? (y/n) : ";
         char lagi; cin >> lagi;
         while (lagi != 'y' && lagi != 'Y' && lagi != 'n' && lagi != 'N'){
