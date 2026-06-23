@@ -65,11 +65,11 @@ void clear(char s[3][3]){
 int main(){
     bool isClose = false;
 
-    cout << "\t\t\t=============================\n";
-    cout << "\t\t\t========TIC TAC TOE==========\n";
-    cout << "\t\t\t=============================\n";
+    cout << "\t\t  ==============================\n";
+    cout << "\t\t  =========TIC TAC TOE==========\n";
+    cout << "\t\t  ==============================\n";
 
-    cout << "\t\t\t*Enter to play the game*";
+    cout << "\t\t     *Enter to play the game*";
     cin.get();
     cout << "\n\n";
 
